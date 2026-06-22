@@ -19,33 +19,27 @@ router.post('/signup', async (req,res)=>{
 
 router.post('/login', async (req, res) => {
     try {
-        console.log("Login request received");
-
         const { email, password } = req.body;
 
-        const token = await User.matchPasswordAndGenerateToken(
-            email,
-            password
-        );
-
-        console.log("Token generated");
+        const token =
+            await User.matchPasswordAndGenerateToken(
+                email,
+                password
+            );
 
         res.cookie("token", token, {
             httpOnly: true,
             secure: true,
-            sameSite: "None",
-            maxAge: 7 * 24 * 60 * 60 * 1000,
+            sameSite: "none",
         });
-
-        console.log("Cookie set");
 
         return res.status(200).json({
             success: true,
-            message: "Login successful",
+            message: "Login successful"
         });
 
     } catch (error) {
-        console.log("LOGIN ERROR:", error);
+        console.log("LOGIN ERROR =", error);
 
         return res.status(401).json({
             error: "Incorrect Email or Password"
