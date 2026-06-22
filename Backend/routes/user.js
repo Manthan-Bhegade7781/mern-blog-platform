@@ -17,9 +17,8 @@ router.post('/signup', async (req,res)=>{
 })
 
 
-router.post('/login', async (req,res)=>{
+router.post('/login', async (req, res) => {
     try {
-
         const { email, password } = req.body;
 
         const token = await User.matchPasswordAndGenerateToken(
@@ -32,12 +31,15 @@ router.post('/login', async (req,res)=>{
             secure: process.env.NODE_ENV === "production",
             sameSite:
                 process.env.NODE_ENV === "production"
-                ? "none"
-                : "lax",
-            });
+                    ? "none"
+                    : "lax",
+        });
+
+        return res.status(200).json({
+            message: "Login successful",
+        });
 
     } catch (error) {
-
         return res.status(401).json({
             error: "Incorrect Email or Password"
         });
