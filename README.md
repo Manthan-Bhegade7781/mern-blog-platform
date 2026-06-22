@@ -147,6 +147,8 @@ VITE_API_URL
 
 <img width="948" height="413" alt="Screenshot 2026-06-22 231552" src="https://github.com/user-attachments/assets/6be07dc8-71f2-406a-9d76-9873c00f2d4d" />
 
+---
+
 <img width="948" height="418" alt="Screenshot 2026-06-22 231147" src="https://github.com/user-attachments/assets/77bd9896-b800-4568-8d1d-f9953f38eb02" />
 
 ---
