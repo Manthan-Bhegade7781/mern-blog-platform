@@ -60,15 +60,15 @@ router.get('/me',(req,res)=>{
     });
 });
 
-router.get("/logout",(req,res)=>{
-
+router.get("/logout", (req, res) => {
     res.clearCookie("token", {
         httpOnly: true,
         secure: true,
-        sameSite: "None",
+        sameSite: "none",
     });
+
     return res.json({
-        message:"Logged Out"
+        message: "Logged Out"
     });
 });
 

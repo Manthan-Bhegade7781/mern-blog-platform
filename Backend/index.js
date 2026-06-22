@@ -16,10 +16,7 @@ const app=express();
 
 app.use(
   cors({
-    origin: [
-      "https://mern-blog-platform-one.vercel.app",
-      "http://localhost:5173",
-    ],
+    origin: process.env.CLIENT_URL,
     credentials: true,
   })
 );
